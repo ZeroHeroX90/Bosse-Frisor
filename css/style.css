@@ -598,6 +598,13 @@ header{
 
 
 /*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ ID'S ///////////////////////////////*/
+#map {
+	height: 500px;
+	width: 500px;
+	position: absolute;
+	left: 2%;
+	top: 30%;
+}
 
 #logo {
 	box-shadow: 15px 8px 25px #111;

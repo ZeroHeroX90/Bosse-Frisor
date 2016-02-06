@@ -13,6 +13,13 @@
 
     <!-- google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+    <!-- BOOTSTRAP START HERE -->
+    <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     
     <!-- the stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -380,6 +387,75 @@
                     </div>
                 </div><!-- container -->
             </div><!-- contact-area -->
+
+            <!-- START THE MAP HERE -->
+            <div id="map" >
+                <div class="container">
+                    <div class="row">
+              <script>
+                var marker;
+
+                function initMap() {
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 13,
+                    center: {lat: 56.033474, lng: 14.162759}
+                  });
+
+                  marker = new google.maps.Marker({
+                    map: map,
+                    draggable: true,
+                    animation: google.maps.Animation.DROP,
+                    position: {lat: 56.043474, lng: 14.162759}
+                  });
+                  marker.addListener('click', toggleBounce);
+                }
+
+                function toggleBounce() {
+                  if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                  } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                  }
+                }
+
+              </script>
+                <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCksS6V0dNeXqdCMNijzfinuDYsdfCrGzY&signed_in=true&callback=initMap">
+                </script>
+
+                <script type="text/javascript">
+                    var marker;
+
+                    function initMap() {
+                      var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 13,
+                        center: {lat: 56.033474, lng: 14.162759}
+                      });
+
+                      marker = new google.maps.Marker({
+                        map: map,
+                        draggable: true,
+                        animation: google.maps.Animation.DROP,
+                        position: {lat: 56.043474, lng: 14.162759}
+                      });
+                      marker.addListener('click', toggleBounce);
+                    }
+
+                    function toggleBounce() {
+                      if (marker.getAnimation() !== null) {
+                        marker.setAnimation(null);
+                      } else {
+                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                      }
+                    }
+
+                    </script>
+
+                        </div><!--row -->
+                    </div><!-- container -->
+                </div><!-- #map -->
+            <!-- END THE MAP HERE -->
+
             <div id="social">
                 <div class="container">
                     <div class="row">
@@ -396,7 +472,7 @@
 
         <!-- Footer Area -->
 
-        <footer>
+        <footer style="position: relative;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
@@ -405,6 +481,7 @@
                 </div>
             </div>
         </footer>
+
 
         <script type="text/javascript">
             jQuery(function ($) {
